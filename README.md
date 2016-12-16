@@ -2,7 +2,11 @@
 
 * Edit docker-compose.yml as you wish
 * Run with docker-compose  
-        
+
+        git clone https://github.com/liu-kan/docker-transmission-nginx.git
+        cd docker-transmission-nginx
+        ./init.sh
+        vim docker-compose.yml # (as you wish)
         docker-compose up -d
 
 # ENVIRONMENT VARIABLES (new)

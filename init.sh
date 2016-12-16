@@ -1,4 +1,16 @@
 #!/bin/bash
+if hash docker 2>/dev/null; then
+        echo "docker has installed"
+else
+	curl -fsSL https://get.docker.com/ | sh
+	sudo groupadd docker
+	sudo usermod -aG docker $USER
+	sudo systemctl enable docker.service
+	sudo systemctl start docker
+        echo "docker has installed"
+fi
+sudo sysctl net.ipv6.conf.all.forwarding=1
+
 alpine-nginx-php-fpm-for-transmisson/ssl/selfssl.sh
 if hash docker-compose 2>/dev/null; then
 	echo "init done"

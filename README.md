@@ -1,7 +1,14 @@
-# ENVIRONMENT VARIABLES (only available with docker run)
+# USEAGE
 
-* TRUSER - Set the username for transmission auth (default 'admin')
-* TRPASSWD - Set the password for transmission auth (default 'admin')
+* Edit docker-compose.yml as you wish
+* Run with docker-compose  
+        
+        docker-compose up -d
+
+# ENVIRONMENT VARIABLES (new)
+
+* TUSER - Set the username for transmission auth (default 'admin')
+* TPASSWD - Set the password for transmission auth (default 'admin')
 
 [linuxserverurl]: https://linuxserver.io
 [forumurl]: https://forum.linuxserver.io

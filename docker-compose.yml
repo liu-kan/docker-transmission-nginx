@@ -6,10 +6,10 @@ nginx:
     links:
         - transmission
 transmission:
-    build: .
+    build: ./
     volumes:
         - /tr/config:/config 
-	- /tr/downloads:/downloads
+        - /tr/downloads:/downloads
     environment:
         - TUSER=tuser
         - TPASS=trpass

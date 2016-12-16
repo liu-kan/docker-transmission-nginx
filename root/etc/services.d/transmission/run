@@ -1,0 +1,28 @@
+#!/usr/bin/with-contenv bash
+
+set -e
+
+CONFIG_DIR=/config
+SETTINGS=$CONFIG_DIR/settings.json
+
+if [ -z ${init+x} ]; then 
+	echo "Read setting from setting.json" 
+	exec \
+        s6-setuidgid abc /usr/bin/transmission-daemon \
+        -g $CONFIG_DIR  -c /watch -f \
+        $(echo "--auth --username ${TUSER:-admin} --password ${TPASS:-admin}")
+
+elif [ "$init" = "no" ]; then
+	echo "Read setting from setting.json"
+	exec \
+        s6-setuidgid abc /usr/bin/transmission-daemon \
+        -g $CONFIG_DIR  -c /watch -f \
+        $(echo "--auth --username ${TUSER:-admin} --password ${TPASS:-admin}") 
+else 
+	echo "Init setting.json"; 
+	sed -i.bakp -e "s/rpc-password\": \"\(.*\)\"/rpc-password\": \"${TPASS}\"/" $SETTINGS 
+	sed -i.baku -e "s/rpc-username\": \"\(.*\)\"/rpc-username\": \"${TUSER}\"/" $SETTINGS 
+	exec \
+        s6-setuidgid abc /usr/bin/transmission-daemon \
+        -g $CONFIG_DIR  -c /watch -f
+fi

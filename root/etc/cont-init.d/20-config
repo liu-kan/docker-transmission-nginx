@@ -1,0 +1,26 @@
+#!/usr/bin/with-contenv bash
+
+echo "cont-init.d 02"
+# make folders
+mkdir -p \
+	/downloads/{complete,incomplete} /watch
+
+# copy config
+[[ ! -f /config/settings.json ]] && cp \
+	/defaults/settings.json /config/settings.json && \
+	echo "COPY default settings.json"
+
+# copy blocklist-update script
+[[ ! -f /config/blocklist-update.sh ]] && cp \
+	/defaults/blocklist-update.sh /config/blocklist-update.sh
+
+# permissions
+chown abc:abc \
+	/config/settings.json \
+	/config/blocklist-update.sh \
+	/downloads \
+	/downloads/complete \
+	/downloads/incomplete \
+	/watch
+
+chmod 755 /config/blocklist-update.sh

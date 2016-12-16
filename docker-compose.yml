@@ -1,0 +1,18 @@
+nginx:
+    build:  ./alpine-nginx-php-fpm-for-transmisson/
+    ports:
+        - "80:80"
+        - "443:443"
+    links:
+        - transmission
+transmission:
+    build: .
+    volumes:
+        - /tr/config:/config 
+	- /tr/downloads:/downloads
+    environment:
+        - TUSER=tuser
+        - TPASS=trpass
+    ports:
+        - "51413:51413"
+

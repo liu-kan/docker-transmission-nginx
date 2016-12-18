@@ -11,8 +11,8 @@ transmission:
         - /tr/config:/config 
         - /tr/downloads:/downloads
     environment:
-        - TUSER=trUserName
-        - TPASS=trPassWord
+        - TUSER=UserName
+        - TPASS=btPassWord
     ports:
         - "51413:51413"  
 # if you change this port, change settings in webUI also!

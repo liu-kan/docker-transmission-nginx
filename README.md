@@ -6,7 +6,9 @@
         git clone https://github.com/liu-kan/docker-transmission-nginx.git
         cd docker-transmission-nginx
         ./init.sh
+        cp docker-compose.yml.tem docker-compose.yml
         vim docker-compose.yml # (as you wish)
+        ./ipv6_ubuntu.sh youripv6sunnet # (if you want to use ipv6, see [detail]:https://tianon.github.io/post/2016/03/03/vultr-docker-ipv6.html)
         docker-compose up -d
 
 # ENVIRONMENT VARIABLES (new)

@@ -10,6 +10,8 @@
         vim docker-compose.yml # (as you wish)
         ./ipv6_ubuntu.sh youripv6sunnet # (like 2001:db8::/80, if you want to use ipv6)
         docker-compose up -d
+        # go to http://yourserverip to see df -h result
+        # go to https://yourserverip to use Transmission Web Interface
 
 Information about ipv6, see [detail](https://tianon.github.io/post/2016/03/03/vultr-docker-ipv6.html) .
 

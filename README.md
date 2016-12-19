@@ -11,7 +11,7 @@
         ./ipv6_ubuntu.sh youripv6sunnet # (like 2001:db8::/80, if you want to use ipv6)
         docker-compose up -d
 
-Information about ipv6, see [![detail](https://tianon.github.io/post/2016/03/03/vultr-docker-ipv6.html)] .
+Information about ipv6, see [detail](https://tianon.github.io/post/2016/03/03/vultr-docker-ipv6.html) .
 
 # ENVIRONMENT VARIABLES (new)
 

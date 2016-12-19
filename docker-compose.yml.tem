@@ -10,9 +10,12 @@ transmission:
     volumes:
         - /tr/config:/config 
         - /tr/downloads:/downloads
+        - /tr/watch:/watch 
     environment:
+        - init=true
         - TUSER=UserName
         - TPASS=btPassWord
+#change TUSER and TPASS as you like
     ports:
         - "51413:51413"  
 # if you change this port, change settings in webUI also!

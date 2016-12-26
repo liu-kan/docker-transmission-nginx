@@ -5,8 +5,7 @@
 
         git clone https://github.com/liu-kan/docker-transmission-nginx.git
         cd docker-transmission-nginx
-        ./init.sh
-        cp docker-compose.yml.tem docker-compose.yml
+        ./init.sh      
         vim docker-compose.yml # (as you wish)
         ./ipv6_ubuntu.sh youripv6sunnet # (like 2001:db8::/80, if you want to use ipv6)
         docker-compose up -d

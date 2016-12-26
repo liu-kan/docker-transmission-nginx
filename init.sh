@@ -10,6 +10,7 @@ else
         echo "docker has installed"
 fi
 sudo sysctl net.ipv6.conf.all.forwarding=1
+cp docker-compose.yml.tem docker-compose.yml
 cd alpine-nginx-php-fpm-for-transmisson/ssl/
 ./selfssl.sh
 #cp ser* alpine-nginx-php-fpm-for-transmisson/ssl/

@@ -2,8 +2,9 @@ sysctl net.ipv6.conf.default.forwarding=1
 sysctl net.ipv6.conf.all.forwarding=1
 sysctl net.ipv6.conf.ens3.accept_ra=2
 apt install ndppd
-ipv6sub=$1
-echo -e "proxy eth0 { \n\
+ifname=$1
+ipv6sub=$2
+echo -e "proxy ${ifname} { \n\
 rule ${ipv6sub} { \n\
 }\n\
  }" >/etc/ndppd.conf

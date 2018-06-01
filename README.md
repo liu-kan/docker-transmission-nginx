@@ -5,9 +5,10 @@
 
         git clone https://github.com/liu-kan/docker-transmission-nginx.git
         cd docker-transmission-nginx
-        sudo ./init.sh      
+        ./init.sh     
+        # If you didn't install docker before, relogin your session
         vim docker-compose.yml # (as you wish)
-        sudo ./ipv6_ubuntu.sh youripv6sunnet # (like 2001:db8::/80, if you want to use ipv6)
+        sudo ./ipv6_ubuntu.sh yourEth0Name youripv6sunnet # (like eth0 and 2001:db8::/80, if you want to use ipv6)
         docker-compose up -d
         # go to http://yourserverip to see df -h result
         # go to https://yourserverip to use Transmission Web Interface

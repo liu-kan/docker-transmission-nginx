@@ -8,6 +8,7 @@ else
 	sudo systemctl enable docker.service
 	sudo systemctl start docker
         echo "docker has installed"
+	echo "relogin your session!!!!"
 fi
 sudo sysctl net.ipv6.conf.all.forwarding=1
 cp docker-compose.yml.tem docker-compose.yml

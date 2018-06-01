@@ -18,5 +18,6 @@ transmission:
 #change TUSER and TPASS as you like
     ports:
         - "51413:51413"  
+        - "9091:9091"  #rpc port,only if you want to use Transmission remote gtk/cli, webUI doesn't need it.
 # if you change this port, change settings in webUI also!
 

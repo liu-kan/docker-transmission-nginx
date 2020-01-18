@@ -14,7 +14,7 @@ jobs:
       with:
         fetch-depth: 1
     - name: init ssl
-      run: echo $GITHUB_WORKSPACE
+      run: echo ${{GITHUB_WORKSPACE}}
       working-directory: ${GITHUB_WORKSPACE}/alpine-nginx-php-fpm-for-transmisson
     - name: Build the Docker image
       run: ./alpine-nginx-php-fpm-for-transmisson/selfssl.sh; docker build -t t1 .

@@ -10,6 +10,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@master
+    - name: init ssl
+      run: ./selfssl.sh
+      working-directory: ./alpine-nginx-php-fpm-for-transmisson
     - name: Build the Docker image
       run: ./alpine-nginx-php-fpm-for-transmisson/selfssl.sh; docker build -t t1 .
-      working-directory: ./alpine-nginx-php-fpm-for-transmisson
+      working-directory: ./alpine-nginx-php-fpm-for-transmisson      

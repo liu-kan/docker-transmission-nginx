@@ -3,18 +3,14 @@ name: Docker Image CI
 on: [push]
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
-      with:
-        fetch-depth: 1
+      uses: actions/checkout@v1
+
     - name: init ssl
-      run: echo ${{GITHUB_WORKSPACE}}
+      run: echo $GITHUB_WORKSPACE
       working-directory: ${GITHUB_WORKSPACE}/alpine-nginx-php-fpm-for-transmisson
     - name: Build the Docker image
       run: ./alpine-nginx-php-fpm-for-transmisson/selfssl.sh; docker build -t t1 .

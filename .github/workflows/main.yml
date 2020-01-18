@@ -11,5 +11,5 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Build the Docker image
-      run: docker build -t t1 .
+      run: ./selfssl.sh; docker build -t t1 .
       working-directory: ./alpine-nginx-php-fpm-for-transmisson

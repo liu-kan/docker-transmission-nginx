@@ -12,5 +12,3 @@ jobs:
         run: |
           cd alpine-nginx-php-fpm-for-transmisson/ssl
           ./selfssl.sh
-          cd ..
-          docker build . --file Dockerfile --tag alpine-nginx-php-fpm-for-transmisson:$(date +%s)

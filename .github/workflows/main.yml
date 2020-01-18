@@ -9,4 +9,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build Docker image
-        run: pwd
+        run: |
+          cd alpine-nginx-php-fpm-for-transmisson/ssl
+          ./selfssl.sh
+          cd ..
+          docker build . --file Dockerfile --tag alpine-nginx-php-fpm-for-transmisson:$(date +%s)

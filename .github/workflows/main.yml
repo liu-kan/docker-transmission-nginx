@@ -9,7 +9,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 1
+    - run: git checkout HEAD^
     - name: init ssl
       run: ./selfssl.sh
       working-directory: ./alpine-nginx-php-fpm-for-transmisson

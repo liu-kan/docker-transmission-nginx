@@ -10,7 +10,7 @@ jobs:
       uses: actions/checkout@v1
 
     - name: init ssl
-      run: echo $GITHUB_WORKSPACE
+      run: env
       working-directory: ${GITHUB_WORKSPACE}/alpine-nginx-php-fpm-for-transmisson
     - name: Build the Docker image
       run: ./alpine-nginx-php-fpm-for-transmisson/selfssl.sh; docker build -t t1 .
